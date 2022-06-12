@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 public class UserController {
 
-    private UsuarioServicios servicio = new UsuarioServicios();
+    private final UsuarioServicios servicio = new UsuarioServicios();
 
     @GetMapping("/v1/user/{userID}")
     @ResponseBody
