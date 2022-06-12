@@ -11,7 +11,7 @@ public class Evento {
     protected LocalDateTime fecha_y_hora;
     private String detalle;
     private boolean isRepeatedEveryYear = false;
-    private DateTimeFormatter formatTime = DateTimeFormatter.ofPattern("dd-MMM-yyyy HH:mm:ss");
+    private final DateTimeFormatter formatTime = DateTimeFormatter.ofPattern("dd-MMM-yyyy HH:mm:ss");
 
     public long getID() {
         return ID;
