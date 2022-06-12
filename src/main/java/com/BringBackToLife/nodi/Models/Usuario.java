@@ -12,8 +12,8 @@ public class Usuario {
     private String nombre;
     private Telefono telefono;
     private LocalDate fecha_nacimiento;
-    private Collection<Grupo> grupos = new ArrayList<>();
-    private Collection<Interes> intereses = new ArrayList<>();
+    protected Collection<Grupo> grupos = new ArrayList<>();
+    protected Collection<Interes> intereses = new ArrayList<>();
 
     public Usuario() {
     }
@@ -32,7 +32,7 @@ public class Usuario {
 
     public void setFechaRegistro(LocalDateTime registro) {
         if (registro == null) {fechaRegistro = LocalDateTime.now();}
-        else {fechaRegistro = registro;};
+        else {fechaRegistro = registro;}
     }
 
     public String getApellido() {
@@ -63,8 +63,8 @@ public class Usuario {
         return fecha_nacimiento;
     }
 
-    public void setFecha_nacimiento(LocalDate fecha_nacimiento) {
-        this.fecha_nacimiento = fecha_nacimiento;
+    public void setFecha_nacimiento(int y, int m, int d) {
+        this.fecha_nacimiento = LocalDate.of(y,m,d);
     }
 
     @Override
