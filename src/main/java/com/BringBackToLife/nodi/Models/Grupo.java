@@ -6,8 +6,8 @@ import java.util.Collection;
 public class Grupo {
     private long ID;
     private String nombre;
-    private Collection<Actividad> fechasImportantes = new ArrayList<>();
-    private Collection<Usuario> participantes = new ArrayList<>();
+    protected Collection<Evento> fechasImportantes = new ArrayList<>();
+    protected Collection<Usuario> participantes = new ArrayList<>();
 
     public long getID() {
         return ID;
