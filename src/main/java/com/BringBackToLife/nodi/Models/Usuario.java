@@ -3,7 +3,6 @@ package com.BringBackToLife.nodi.Models;
 import java.time.*;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
-import java.util.Collection;
 
 public class Usuario {
     private long id;
@@ -12,8 +11,8 @@ public class Usuario {
     private String nombre;
     private Telefono telefono;
     private LocalDate fecha_nacimiento;
-    protected Collection<Grupo> grupos = new ArrayList<>();
-    protected Collection<Interes> intereses = new ArrayList<>();
+    protected ArrayList<Grupo> grupos = new ArrayList<>();
+    protected ArrayList<Interes> intereses = new ArrayList<>();
 
     public Usuario() {
     }
@@ -24,6 +23,10 @@ public class Usuario {
         this.telefono = telefono;
         this.fecha_nacimiento = fecha_nacimiento;
         setFechaRegistro(registro);
+    }
+
+    public long getId() {
+        return id;
     }
 
     public LocalDateTime getFechaRegistro() {
