@@ -1,4 +1,4 @@
-package com.BringBackToLife.nodi.Persistence;
+package com.BringBackToLife.nodi.Persistence.DAO;
 
 import java.util.ArrayList;
 
