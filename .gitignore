@@ -8,8 +8,7 @@ target/
 node_modules
 
 ### Docs ###
-!**/src/main/**/docs/
-*.drawio
+diagrams
 
 ### STS ###
 .apt_generated
