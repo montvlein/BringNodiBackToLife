@@ -7,6 +7,9 @@ target/
 ### Client ###
 node_modules
 
+### Docs ###
+.drawio
+
 ### STS ###
 .apt_generated
 .classpath
