@@ -1,6 +1,5 @@
 package com.BringBackToLife.nodi.Models;
 
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.Month;
 import java.time.format.DateTimeFormatter;
@@ -8,6 +7,7 @@ import java.time.format.DateTimeFormatter;
 public class Evento {
     private long ID;
     private String nombre;
+    private Interes tipoDeEvento;
     protected LocalDateTime fecha_y_hora;
     private String detalle;
     private boolean isRepeatedEveryYear = false;
