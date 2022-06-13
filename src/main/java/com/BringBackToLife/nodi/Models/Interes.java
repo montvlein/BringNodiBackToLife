@@ -5,6 +5,13 @@ public class Interes {
     private long id;
     private String nombre;
 
+    public Interes() {
+    }
+
+    public Interes(String nombre) {
+        this.nombre = nombre;
+    }
+
     public long getId() {
         return id;
     }
