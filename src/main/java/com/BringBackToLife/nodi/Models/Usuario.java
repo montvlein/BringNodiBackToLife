@@ -70,6 +70,22 @@ public class Usuario {
         this.fecha_nacimiento = LocalDate.of(y,m,d);
     }
 
+    public ArrayList<Grupo> getGrupos() {
+        return grupos;
+    }
+
+    public ArrayList<Interes> getIntereses() {
+        return intereses;
+    }
+
+    public void addInteres(Interes i) {
+        intereses.add(i);
+    }
+
+    public void addGrupo(Grupo g) {
+        grupos.add(g);
+    }
+
     @Override
     public String toString() {
         DateTimeFormatter formatoFechas = DateTimeFormatter.ofPattern("dd-MMM-yyyy HH:mm:ss");
