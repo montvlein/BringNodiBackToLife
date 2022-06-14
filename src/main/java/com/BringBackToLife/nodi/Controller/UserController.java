@@ -15,7 +15,7 @@ public class UserController {
     @ResponseBody
     public ResponseEntity<Usuario> perfilDeUsuario(@PathVariable long userID) {
         ResponseEntity<Usuario> response;
-        Usuario user = servicio.buscarUsuario(userID);
+        Usuario user = servicio.buscar(userID);
         if (user != null) {
             try {
                 response = ResponseEntity.ok(user);
