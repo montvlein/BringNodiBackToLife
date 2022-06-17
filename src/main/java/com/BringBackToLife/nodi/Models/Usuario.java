@@ -34,7 +34,7 @@ public class Usuario {
     }
 
     public void setFechaRegistro(LocalDateTime registro) {
-        if (registro == null) {fechaRegistro = LocalDateTime.now();}
+        if (registro == null) {fechaRegistro = getTelefono().getUltimoRegistro();}
         else {fechaRegistro = registro;}
     }
 
