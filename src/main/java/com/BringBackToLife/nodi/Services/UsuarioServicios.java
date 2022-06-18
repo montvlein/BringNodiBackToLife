@@ -3,13 +3,21 @@ package com.BringBackToLife.nodi.Services;
 import com.BringBackToLife.nodi.Models.Usuario;
 import com.BringBackToLife.nodi.Persistence.DAO.iDAO;
 import com.BringBackToLife.nodi.Persistence.DAO.implement.UsuarioDAO;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.Collection;
 
+@Service
 public class UsuarioServicios implements CUD {
 
-    iDAO<Usuario> dao = new UsuarioDAO();
+    private iDAO<Usuario> dao;
+
+    @Autowired
+    public void setDao(iDAO<Usuario> dao) {
+        this.dao = dao;
+    }
 
     public boolean guardar(Usuario usuario) {
         return dao.guardar(usuario);

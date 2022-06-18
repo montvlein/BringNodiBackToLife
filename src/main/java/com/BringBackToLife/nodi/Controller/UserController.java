@@ -2,16 +2,18 @@ package com.BringBackToLife.nodi.Controller;
 
 import com.BringBackToLife.nodi.Models.Usuario;
 import com.BringBackToLife.nodi.Services.UsuarioServicios;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
+@RequestMapping("/v1/user/")
 public class UserController {
 
-    private final UsuarioServicios servicio = new UsuarioServicios();
+    private UsuarioServicios servicio;
 
-    @GetMapping("/v1/user/{userID}")
+    @GetMapping("{userID}")
     @ResponseBody
     public ResponseEntity<Usuario> perfilDeUsuario(@PathVariable long userID) {
         ResponseEntity<Usuario> response;
@@ -27,5 +29,10 @@ public class UserController {
             response = ResponseEntity.status(HttpStatus.NOT_FOUND).build();
 
         return response;
+    }
+
+    @Autowired
+    public void setServicio(UsuarioServicios servicio) {
+        this.servicio = servicio;
     }
 }
