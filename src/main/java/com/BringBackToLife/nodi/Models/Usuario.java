@@ -25,6 +25,10 @@ public class Usuario {
         setFechaRegistro(registro);
     }
 
+    public void setId(long userID) {
+        this.id = userID;
+    }
+
     public long getId() {
         return id;
     }
