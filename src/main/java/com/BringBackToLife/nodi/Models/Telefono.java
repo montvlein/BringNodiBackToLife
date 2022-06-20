@@ -6,6 +6,11 @@ public class Telefono {
     private long numero;
     private LocalDateTime ultimoRegistro;
 
+    public Telefono(long numero) {
+        this.numero = numero;
+        ultimoRegistro.now();
+    }
+
     public Telefono(long numero, LocalDateTime ultimoRegistro) {
         this.numero = numero;
         this.ultimoRegistro = ultimoRegistro;
