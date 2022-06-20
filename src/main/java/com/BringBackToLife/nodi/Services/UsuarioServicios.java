@@ -2,15 +2,13 @@ package com.BringBackToLife.nodi.Services;
 
 import com.BringBackToLife.nodi.Models.Usuario;
 import com.BringBackToLife.nodi.Persistence.DAO.iDAO;
-import com.BringBackToLife.nodi.Persistence.DAO.implement.UsuarioDAO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
-import java.util.Collection;
 
 @Service
-public class UsuarioServicios implements CUD {
+public class UsuarioServicios {
 
     private iDAO<Usuario> dao;
 
@@ -37,14 +35,6 @@ public class UsuarioServicios implements CUD {
 
     public ArrayList<Usuario> listarTodos() {
         return dao.listarTodos();
-    }
-
-    public boolean agregarALaColeccion(Collection c, Object o) {
-        return false;
-    }
-
-    public boolean eliminarDeLaColeccion(Collection c, Object o) {
-        return false;
     }
 
 }
