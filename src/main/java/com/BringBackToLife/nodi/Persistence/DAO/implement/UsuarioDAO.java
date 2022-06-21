@@ -5,7 +5,6 @@ import com.BringBackToLife.nodi.Persistence.DAO.iDAO;
 import org.springframework.stereotype.Repository;
 
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.HashMap;
 
 @Repository
@@ -15,7 +14,7 @@ public class UsuarioDAO implements iDAO<Usuario> {
 
     @Override
     public boolean guardar(Usuario usuario) {
-        datosEnMemoria.put(usuario.getId(),usuario);
+        datosEnMemoria.put(usuario.getId(), usuario);
         return true;
     }
 
@@ -33,11 +32,12 @@ public class UsuarioDAO implements iDAO<Usuario> {
     @Override
     public Usuario actualizar(Usuario usuario) {
         datosEnMemoria.remove(usuario.getId());
-        return datosEnMemoria.put(usuario.getId(), usuario);
+        datosEnMemoria.put(usuario.getId(), usuario);
+        return buscar(usuario.getId());
     }
 
     @Override
     public ArrayList<Usuario> listarTodos() {
-        return (ArrayList<Usuario>) datosEnMemoria.values();
+        return new ArrayList<>(datosEnMemoria.values());
     }
 }
