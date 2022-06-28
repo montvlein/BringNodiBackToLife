@@ -4,6 +4,10 @@ target/
 !**/src/main/**/target/
 !**/src/test/**/target/
 
+
+### ENV ###
+.env
+
 ### Client ###
 node_modules
 
