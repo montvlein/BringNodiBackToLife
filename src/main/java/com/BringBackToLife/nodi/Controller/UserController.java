@@ -1,6 +1,6 @@
 package com.BringBackToLife.nodi.Controller;
 
-import com.BringBackToLife.nodi.Models.Usuario;
+import com.BringBackToLife.nodi.Models.Entities.Usuario;
 import com.BringBackToLife.nodi.Services.UsuarioServicios;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;

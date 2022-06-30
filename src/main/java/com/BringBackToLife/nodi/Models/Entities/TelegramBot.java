@@ -1,4 +1,4 @@
-package com.BringBackToLife.nodi.Models;
+package com.BringBackToLife.nodi.Models.Entities;
 
 import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Value;

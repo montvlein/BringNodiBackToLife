@@ -1,4 +1,4 @@
-package com.BringBackToLife.nodi.Models;
+package com.BringBackToLife.nodi.Models.Entities;
 
 import java.util.ArrayList;
 import java.util.Collection;

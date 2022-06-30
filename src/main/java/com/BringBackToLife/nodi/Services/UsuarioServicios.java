@@ -1,6 +1,6 @@
 package com.BringBackToLife.nodi.Services;
 
-import com.BringBackToLife.nodi.Models.Usuario;
+import com.BringBackToLife.nodi.Models.Entities.Usuario;
 import com.BringBackToLife.nodi.Persistence.DAO.iDAO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

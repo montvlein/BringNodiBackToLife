@@ -1,9 +1,14 @@
-package com.BringBackToLife.nodi.Models;
+package com.BringBackToLife.nodi.Models.Entities;
+
+import lombok.Getter;
+import lombok.Setter;
 
 import java.time.*;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 
+@Getter
+@Setter
 public class Usuario {
     private long id;
     private LocalDateTime fechaRegistro;

@@ -1,4 +1,4 @@
-package com.BringBackToLife.nodi.Models;
+package com.BringBackToLife.nodi.Models.Entities;
 
 import java.time.LocalDateTime;
 import java.time.Month;
