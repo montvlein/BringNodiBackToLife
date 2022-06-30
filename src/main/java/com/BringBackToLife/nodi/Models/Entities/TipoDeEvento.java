@@ -1,14 +1,14 @@
 package com.BringBackToLife.nodi.Models.Entities;
 
-public class Interes {
+public class TipoDeEvento {
 
     private long id;
     private String nombre;
 
-    public Interes() {
+    public TipoDeEvento() {
     }
 
-    public Interes(String nombre) {
+    public TipoDeEvento(String nombre) {
         this.nombre = nombre;
     }
 
