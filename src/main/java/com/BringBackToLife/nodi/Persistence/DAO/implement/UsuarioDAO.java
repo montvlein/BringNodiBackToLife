@@ -1,6 +1,6 @@
 package com.BringBackToLife.nodi.Persistence.DAO.implement;
 
-import com.BringBackToLife.nodi.Models.Usuario;
+import com.BringBackToLife.nodi.Models.Entities.Usuario;
 import com.BringBackToLife.nodi.Persistence.DAO.iDAO;
 import org.springframework.stereotype.Repository;
 
