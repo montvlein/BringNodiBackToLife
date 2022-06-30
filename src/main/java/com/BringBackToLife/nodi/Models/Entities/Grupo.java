@@ -1,27 +1,25 @@
 package com.BringBackToLife.nodi.Models.Entities;
 
+import lombok.Getter;
+import lombok.Setter;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.DBRef;
+import org.springframework.data.mongodb.core.mapping.Document;
+
 import java.util.ArrayList;
-import java.util.Collection;
+import java.util.List;
 
+@Setter
+@Getter
+@Document
 public class Grupo {
-    private long ID;
+
+    @Id
+    private Long ID;
     private String nombre;
-    protected Collection<Evento> fechasImportantes = new ArrayList<>();
-    protected Collection<Usuario> participantes = new ArrayList<>();
+    private String detalle;
 
-    public long getID() {
-        return ID;
-    }
+    private List<Evento> fechasImportantes = new ArrayList<>();
+    private List<Usuario> participantes = new ArrayList<>();
 
-    public void setID(long ID) {
-        this.ID = ID;
-    }
-
-    public String getNombre() {
-        return nombre;
-    }
-
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
 }

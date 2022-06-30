@@ -1,35 +1,29 @@
 package com.BringBackToLife.nodi.Models.Entities;
 
+import lombok.Getter;
+import lombok.Setter;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
+
 import java.time.LocalDateTime;
 import java.time.Month;
 import java.time.format.DateTimeFormatter;
 
+@Setter
+@Getter
+@Document
 public class Evento {
-    private long ID;
+
+    @Id
+    private Long ID;
     private String nombre;
-    private Interes tipoDeEvento;
-    protected LocalDateTime fecha_y_hora;
+    private TipoDeEvento tipoDeEvento;
+    private LocalDateTime fecha_y_hora;
     private String detalle;
     private boolean isRepeatedEveryYear = false;
-    private final DateTimeFormatter formatTime = DateTimeFormatter.ofPattern("dd-MMM-yyyy HH:mm:ss");
+    private final static DateTimeFormatter formatTime = DateTimeFormatter.ofPattern("dd-MMM-yyyy HH:mm:ss");
 
-    public long getID() {
-        return ID;
-    }
-
-    public void setID(long ID) {
-        this.ID = ID;
-    }
-
-    public String getNombre() {
-        return nombre;
-    }
-
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
-
-    public String getFecha_y_hora() {
+    public String getFecha_y_hora_formateada() {
         return formatTime.format(fecha_y_hora);
     }
 
@@ -53,19 +47,4 @@ public class Evento {
         fecha_y_hora = LocalDateTime.of(y,m,d, 0, 0);
     }
 
-    public String getDetalle() {
-        return detalle;
-    }
-
-    public void setDetalle(String detalle) {
-        this.detalle = detalle;
-    }
-
-    public boolean isRepeatedEveryYear() {
-        return isRepeatedEveryYear;
-    }
-
-    public void setRepeatedEveryYear(boolean repeatedEveryYear) {
-        isRepeatedEveryYear = repeatedEveryYear;
-    }
 }
