@@ -8,6 +8,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
+import java.util.List;
 
 @RestController
 @RequestMapping("/v1/user/")
@@ -57,9 +58,9 @@ public class UserController {
 
     @PutMapping("{userID}")
     @ResponseBody
-    public ResponseEntity<Usuario> actualizarUsuario(@RequestBody Usuario u) {
+    public ResponseEntity<Usuario> actualizarUsuario(@RequestBody Usuario u, @PathVariable Long userID) {
         ResponseEntity<Usuario> response;
-        Usuario user = servicio.actualizar(u);
+        Usuario user = servicio.actualizar(userID, u);
         if (user != null) {
             try {
                 response = ResponseEntity.ok(user);
@@ -88,8 +89,8 @@ public class UserController {
         return response;
     }
 
-    @GetMapping
-    public ResponseEntity<ArrayList<Usuario>> listar(){
+    @GetMapping("all")
+    public ResponseEntity<List<Usuario>> listar(){
         return ResponseEntity.ok(servicio.listarTodos());
     }
 
