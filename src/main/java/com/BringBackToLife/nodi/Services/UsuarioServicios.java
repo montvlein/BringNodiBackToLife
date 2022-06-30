@@ -1,40 +1,57 @@
 package com.BringBackToLife.nodi.Services;
 
 import com.BringBackToLife.nodi.Models.Entities.Usuario;
-import com.BringBackToLife.nodi.Persistence.DAO.iDAO;
+import com.BringBackToLife.nodi.Persistence.ORM.user_repository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
+import java.util.List;
 
 @Service
 public class UsuarioServicios {
 
-    private iDAO<Usuario> dao;
+    private user_repository repository;
 
     @Autowired
-    public void setDao(iDAO<Usuario> dao) {
-        this.dao = dao;
+    public void setRepository(user_repository repository) {
+        this.repository = repository;
     }
 
     public boolean guardar(Usuario usuario) {
-        return dao.guardar(usuario);
+        boolean res = false;
+        Usuario nuevoUsuario = repository.save(usuario);
+        if (nuevoUsuario != null) {
+            res = true;
+        }
+        return res;
     }
 
-    public boolean eliminar(long id) {
-        return dao.eliminar(id);
+    public boolean eliminar(Long id) {
+        boolean res = false;
+        Usuario usuario = buscar(id);
+        if (usuario != null) {
+            repository.deleteById(id);
+            res = true;
+        }
+        return res;
     }
 
-    public Usuario buscar(long id) {
-        return dao.buscar(id);
+    public Usuario buscar(Long id) {
+        return repository.findById(id).orElse(null);
     }
 
-    public Usuario actualizar(Usuario usuario) {
-        return dao.actualizar(usuario);
+    public Usuario actualizar(Long id, Usuario usuario) {
+        Usuario res = usuario;
+        Usuario usuarioAActualizar = buscar(id);
+        if (usuarioAActualizar != null) {
+            repository.save(usuario);
+            res = usuarioAActualizar;
+        }
+        return res;
     }
 
-    public ArrayList<Usuario> listarTodos() {
-        return dao.listarTodos();
+    public List<Usuario> listarTodos() {
+        return repository.findAll();
     }
 
 }
