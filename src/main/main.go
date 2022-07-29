@@ -12,27 +12,11 @@ import (
 
 func main()  {
 	http.HandleFunc("/", textHandle)
-	
+
 	log.Printf("Starting server at port 8080\n")
 	if err := http.ListenAndServe(":8080", nil); err != nil {
 		log.Fatal(err)
 	}
-}
-
-const telegramApiBaseUrl string = "https://api.telegram.org/bot"
-
-type Update struct {
-	UpdateId int     `json:"update_id"`
-	Message  Message `json:"message"`
-}
-
-type Message struct {
-	Text     string   `json:"text"`
-	Chat     Chat     `json:"chat"`
-}
-
-type Chat struct {
-	Id int `json:"id"`
 }
 
 func parseTelegramRequest(r *http.Request) (*Update, error) {
@@ -44,7 +28,6 @@ func parseTelegramRequest(r *http.Request) (*Update, error) {
 	return &update, nil
 }
 
-// sendTextToTelegramChat sends a text message to the Telegram chat identified by its chat Id
 func sendTextToTelegramChat(chatId int, text string) (string, error) {
 
 	log.Printf("Sending %s to chat_id: %d", text, chatId)
